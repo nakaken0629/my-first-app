@@ -6,6 +6,12 @@
  * user guide available at https://docs.gradle.org/3.4.1/userguide/tutorial_java_projects.html
  */
 
+group 'io.vertx.blog'
+version '1.0-SNAPSHOT'
+project.ext {
+      artifactId = 'my-first-app'
+}
+
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 
@@ -21,7 +27,7 @@ repositories {
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
-    compile 'com.google.guava:guava:20.0'
+    compile 'io.vertx:vertx-core:3.0.0'
 
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
