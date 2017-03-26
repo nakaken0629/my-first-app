@@ -32,6 +32,7 @@ repositories {
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     compile 'io.vertx:vertx-core:3.0.0'
+    compile 'io.vertx:vertx-web:3.0.0'
 
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
