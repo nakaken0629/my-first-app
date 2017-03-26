@@ -51,3 +51,13 @@ shadowJar {
         include 'META-INF/services/io.vertx.core.spi.VerticleFactory'
     }
 }
+
+test.dependsOn.add(shadowJar)
+test.doFirst {
+    ant.java(jar: "build/libs/${project.name}-${version}-fat.jar",
+            fork: true,
+            spawn: true)
+}
+test.doLast {
+    ['sh', '-c', "ps -ax | grep ${project.name}-${version}-fat.jar | grep -v grep | awk 'NR==1{print \$1}' | xargs kill -SIGTERM"].execute()
+}
